@@ -17,8 +17,9 @@ import streamlit as st
 pd.options.display.max_rows = 999
 pd.set_option('display.max_columns', None)
 tz = timezone('EST')
-API_KEY = "PKYYODA53HBGXJQ79IBD"
-SECRET_KEY = "irsQqeKqjbX1L9TiU5rueGVamiV6YLIAxHoPzfRy"
+# TO DO
+API_KEY = "" # fill these blanks out with your own Alpaca account
+SECRET_KEY = ""
 api = tradeapi.REST(API_KEY,
                     SECRET_KEY,
                     'https://paper-api.alpaca.markets')
@@ -238,7 +239,3 @@ def run_checker(stocklist, amount_dict, date):
             print('Market closed ({})'.format(datetime.datetime.now(tz)))
             print('Sleeping', round(time_to_open(datetime.datetime.now(tz)) / 60 / 60, 2), 'hours')
             time.sleep(time_to_open(datetime.datetime.now(tz)))
-
-# test
-# data = get_data_bars(list(loading.keys()), freq, slow, fast)
-# run_checker(list(loading.keys()), datetime.datetime(2024, 1, 12))
